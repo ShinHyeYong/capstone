@@ -25,6 +25,10 @@
          </ion-item>
 
          <ion-item>
+           <button ion-button color="light" (click)="repetition(inputID)">중복확인</button>
+         </ion-item>
+
+         <ion-item>
            <ion-label>비밀번호</ion-label>
            <ion-input type="password" [(ngModel)]="inputPW"></ion-input>
          </ion-item>
@@ -41,7 +45,7 @@
    <ion-row>
      <ion-col>
        <button ion-button color="light" (click)="Submit(inputID, inputPW, nickname)">작성완료</button>
-       <button ion-button color="light" (click)="Cancel()">취소</button>
+       <button ion-button color="light" (click)="Cancle()">취소</button>
      </ion-col>
    </ion-row>
 
