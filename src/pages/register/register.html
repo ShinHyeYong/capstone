@@ -1,0 +1,51 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      회원가입 페이지
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div >
+
+   <ion-row>
+     <ion-col>
+
+     </ion-col>
+   </ion-row>
+
+   <ion-row>
+     <ion-col>
+       <ion-list>
+
+         <ion-item>
+           <ion-label>아이디</ion-label>
+           <ion-input type="text" [(ngModel)]="inputID"></ion-input>
+         </ion-item>
+
+         <ion-item>
+           <ion-label>비밀번호</ion-label>
+           <ion-input type="password" [(ngModel)]="inputPW"></ion-input>
+         </ion-item>
+
+         <ion-item>
+           <ion-label>닉네임</ion-label>
+           <ion-input type="text" [(ngModel)]="nickname"></ion-input>
+         </ion-item>
+
+       </ion-list>
+     </ion-col>
+   </ion-row>
+
+   <ion-row>
+     <ion-col>
+       <button ion-button color="light" (click)="Submit(inputID, inputPW, nickname)">작성완료</button>
+       <button ion-button color="light" (click)="Cancel()">취소</button>
+     </ion-col>
+   </ion-row>
+
+ </div>
+
+
+</ion-content>
