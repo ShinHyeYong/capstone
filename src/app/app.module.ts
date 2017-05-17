@@ -8,12 +8,16 @@ import { HttpModule } from '@angular/http';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { RegisterPage } from '../pages/register/register';
+import { MainPage } from '../pages/main-page/main-page';
+import { PhotoselectPage } from '../pages/photoselect/photoselect';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    RegisterPage
+    RegisterPage,
+    MainPage,
+    PhotoselectPage
   ],
   imports: [
     HttpModule,
@@ -24,7 +28,9 @@ import { RegisterPage } from '../pages/register/register';
   entryComponents: [
     MyApp,
     HomePage,
-    RegisterPage
+    RegisterPage,
+    MainPage,
+    PhotoselectPage
   ],
   providers: [
     StatusBar,

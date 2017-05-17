@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import { RegisterPage } from '../register/register';
+import { MainPage } from '../main-page/main-page';
 import 'rxjs/Rx';
 
 @Component({
@@ -38,6 +39,7 @@ export class HomePage {
                     });
                     toast.present();
                     this.loginConfirm = null;
+                    this.navCtrl.push(MainPage);
                   }else{
                     let toast = this.toastCtrl.create({
                       message: '아이디 또는 비밀번호가 일치하지 않습니다.',
