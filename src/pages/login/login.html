@@ -1,0 +1,31 @@
+<!--
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Login Page
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+-->    
+<ion-content padding>
+    <ion-item *ngFor="let message of chats">{{message}}</ion-item>
+
+<ion-label>Login via</ion-label>
+<button ion-button >Facebook</button>
+<button ion-button color="danger" >Google+</button><p></p>
+<ion-label>or</ion-label>
+    <ion-item>
+      <ion-label floating>Email address</ion-label>
+      <ion-input type="text" [(ngModel)]="inputID"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Password</ion-label>
+      <ion-input type="password" [(ngModel)]="inputPW"></ion-input>
+    </ion-item>
+    <p></p>
+      <button ion-button color="white">Forget the password?</button>
+      <button ion-button color="light" (click)="login(inputID, inputPW)">Sign in</button>
+      <p></p>
+        <button ion-button color="white" (click)="RegisterPage()">Join Us</button>
+</ion-content>

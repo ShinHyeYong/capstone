@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { IonicModule } from 'ionic-angular';
-import { MainPage } from './main-page';
+import { Frameselect } from './frameselect';
 
 @NgModule({
   declarations: [
-    MainPage,
+    Frameselect,
   ],
   imports: [
     //IonicModule.forChild(Frameselect),
   ],
   exports: [
-    MainPage
+    Frameselect
   ]
 })
-export class MainPagetModule {}
+export class FrameselectModule {}

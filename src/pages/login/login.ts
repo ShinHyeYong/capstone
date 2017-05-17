@@ -6,10 +6,10 @@ import { MainPage } from '../main-page/main-page';
 import 'rxjs/Rx';
 
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-login',
+  templateUrl: 'login.html'
 })
-export class HomePage {
+export class LoginPage {
   inputID: string;
   inputPW: string;
   loginConfirm: string;

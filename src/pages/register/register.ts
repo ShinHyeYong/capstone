@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, ToastController } from 'ionic-angular';
 import { Http } from '@angular/http';
-import { HomePage } from '../home/home';
+import { LoginPage } from '../login/login';
 
 import 'rxjs/Rx';
 
@@ -104,6 +104,6 @@ export class RegisterPage {
   }
 
   Cancle() {
-    this.navCtrl.push(HomePage);
+    this.navCtrl.push(LoginPage);
   }
 }
