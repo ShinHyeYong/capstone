@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ViewController} from 'ionic-angular';
+import { PhotoselectPage } from '../photoselect/photoselect';
 
 /**
  * Generated class for the Frameselect page.
@@ -22,6 +23,9 @@ export class Frameselect {
   }
   select(){
     this.view.dismiss();
+  }
+  dismiss(){
+    this.navCtrl.push(PhotoselectPage)
   }
 
 }

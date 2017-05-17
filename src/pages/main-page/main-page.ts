@@ -24,6 +24,7 @@ export class MainPage {
  
   }
    PhotoselectPage(){
+     console.log("test");
     this.navCtrl.push(PhotoselectPage);
   }
 }
