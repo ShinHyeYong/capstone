@@ -41,7 +41,7 @@ import { Toast } from '@ionic-native/toast';
   ],
   providers: [
     StatusBar,
-    SplashScreen,ImagePicker,Transfer,File,Toast,ModalController,
+    SplashScreen,ImagePicker,Transfer,File,Toast,ModalController,LoginPage,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]
 })

@@ -15,7 +15,7 @@ export class RegisterPage {
   nickname: string;
 
   checkIDresult: string;
-
+  
 
   constructor(public navCtrl: NavController, public http: Http, private toastCtrl: ToastController) {
     this.checkIDresult = "uncheck";

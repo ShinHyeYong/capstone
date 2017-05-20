@@ -5,12 +5,16 @@ import { MainPage } from './main-page';
 @NgModule({
   declarations: [
     MainPage,
+    
   ],
   imports: [
-    //IonicModule.forChild(Frameselect),
+    //IonicModule.forChild(Frameselect),LoginPage
+   
   ],
+   
   exports: [
-    MainPage
+    MainPage,
+    
   ]
 })
 export class MainPagetModule {}

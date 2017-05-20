@@ -39,7 +39,9 @@ export class LoginPage {
                     });
                     toast.present();
                     this.loginConfirm = null;
-                    this.navCtrl.push(MainPage);
+                    this.navCtrl.push(MainPage,{
+                      id:inputID
+                    });
                   }else{
                     let toast = this.toastCtrl.create({
                       message: '아이디 또는 비밀번호가 일치하지 않습니다.',
