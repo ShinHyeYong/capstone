@@ -6,7 +6,7 @@
 -->
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>frameselect</ion-title>
        <ion-buttons end>
       <button ion-button icon-only (click)="dismiss()">
@@ -19,8 +19,10 @@
 </ion-header>
 
 
-<ion-content padding>
-<!--<img [src]="assets/frame2.png">-->
-<button ion-button block (click)="select()">테스트보내기</button>
-
+<ion-content padding class="imagediv" >
+<!-- 프레임 선택 이미지 -->
+<img src="assets/frame2.png" (click)="select2(2)" >
+<img src="assets/frame3.png" (click)="select3(3)" ><br>
+<img src="assets/frame4.png" (click)="select4(4)" vspace="30">
+<img src="assets/frame5.png" (click)="select5()" vspace="30">
 </ion-content>

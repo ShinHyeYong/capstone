@@ -17,18 +17,20 @@ export class PhotoselectPage {
   multi_emo=[];
   fileTransfer: TransferObject;
   fileTransfer2: TransferObject;
+  time:number;
   constructor(public modalCtrl: ModalController,private toast: Toast,private transfer: Transfer, private file: File,private imagePicker: ImagePicker,public navCtrl: NavController, public http: Http, private toastCtrl: ToastController) {
   }
   Photoselect(){
-    let options = {
-    quality: 100
+    const options = {
+      maximumImagesCount: 5, //전송가능한 최대 사진 수
+      quality: 100
     }
     this.imagePicker.getPictures(options).then((results) => {
       for (var i = 0; i < results.length; i++) {
         this.multi_img[i]=results[i];
        let result_img_list = {
-          success: "이미지 선택 완료",
-          result_list: i+"번째"+'Image URI: ' +results[i]
+          success: "이미지 선택 완료222",
+          result_list: i+"번째"+'Image URI: ' +results[i],
         }
         this.http.post("http://117.17.158.192:8100", result_img_list)
         .map(data => data.json())
@@ -47,10 +49,11 @@ export class PhotoselectPage {
   sendfile(){
     for (var i = 0; i < this.multi_img.length; i++) {
     this.fileTransfer = this.transfer.create();
+    this.time=Date.now();
     console.log("테스트");
       let options : FileUploadOptions = {
       fileKey: 'file',
-      fileName: "test"+i+".jpg",
+      fileName: "together"+i+".jpg",
       headers: {
     // "Access-Control-Allow-Origin" : "*",
     // "Access-Control-Allow-Methods" : "POST, GET, OPTIONS, PUT",
@@ -70,17 +73,17 @@ export class PhotoselectPage {
       }, (err) => {
 
       });
-      this.multiemotion(i);
+      this.multiemotion(i,this.time);
 
   }
 } 
-multiemotion(i:number){
+multiemotion(i:number,time:number){
 
     this.fileTransfer2 = this.transfer.create();
     console.log("테스트");
     let options: FileUploadOptions = {
       fileKey: 'file',
-      fileName:  "test"+ i+ ".jpg",
+      fileName:  "together"+ i+this.time+".jpg",
       headers: {
       "Content-Type": "application/octet-stream"
     , "Ocp-Apim-Subscription-Key": "7095c739d4f94934861dad9cbd44e01a" }
@@ -91,7 +94,7 @@ multiemotion(i:number){
         let test = {
           type:"imgSave",
           id:"xxx",
-          filename: "test"+i+ ".jpg",
+          filename: "together"+i+this.time+".jpg",
           emotion:this.multi_emo[i],
           test:i
         }

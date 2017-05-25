@@ -87,6 +87,7 @@ export class RegisterPage {
                 //.map(data => data.json())
                 .subscribe(res => {
                   console.log();
+                  this.Cancle();
         });
     }else{
       // 작성되지 않은 부분이 있는 경우
@@ -104,6 +105,6 @@ export class RegisterPage {
   }
 
   Cancle() {
-    this.navCtrl.push(LoginPage);
+    this.navCtrl.setRoot(LoginPage);
   }
 }

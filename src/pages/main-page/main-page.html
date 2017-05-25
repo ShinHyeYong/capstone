@@ -1,44 +1,58 @@
-<!--
-  Generated template for the MainPage page.
 
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
+
 <ion-header>
-  <ion-navbar>
-<div padding>
-  <ion-segment [(ngModel)]="photo">
-    <ion-segment-button value="Make">
-      Make
+  <ion-navbar color="primary">
+  </ion-navbar>
+  <ion-toolbar color="primary" no-border-top>
+  <ion-segment color="white" [(ngModel)]="photo">
+    <ion-segment-button color="white" value="Make">
+      만들기
     </ion-segment-button>
     <ion-segment-button value="Storage">
-      Storage
+      히스토리
+    </ion-segment-button>
+    <ion-segment-button value="Setting">
+      설정
     </ion-segment-button>
   </ion-segment>
-</div>
-  </ion-navbar>
+  </ion-toolbar>
+
 </ion-header>
 
-
-<ion-content padding>
-
-
+<ion-content class="background" padding>
 <div [ngSwitch]="photo">
   <ion-list *ngSwitchCase="'Make'">
-     <button (click)="Photoselect()">test3</button> 
-     <button (click)="frameselect()">test2</button>
+    <!--만들기에 있는 선택버튼-->
+    <div align="center">
+     <button ion-button round (click)="Photoselect()">사진선택1</button>
+     <button ion-button round (click)="frameselect()">프레임선택</button>
+    </div>
      <ion-item ion-item *ngFor="let image of multi_img">
        <img [src]="image" *ngIf="image" />
     </ion-item>
   </ion-list>
 
+<!-- 히스토리에 있는 부분 -->
   <ion-list *ngSwitchCase="'Storage'">
     <ion-item>
-      <ion-thumbnail item-left>
-       <!--<img src="img/thumbnail-kitten-1.jpg">-->
-      </ion-thumbnail>
-      <h2>Luna</h2>
     </ion-item>
+  </ion-list>
+
+  <!-- 설정에 있는 부분 -->
+  <ion-list class="background" *ngSwitchCase="'Setting'">
+    <p>기본</p>
+    <button ion-item *ngFor="let basicitem of basicitems" (click)="basicitemSelected(basicitem)">
+      {{basicitem}}
+    </button>
+    <br>
+    <p>계정</p>
+    <button ion-item *ngFor="let securityitem of securityitems" (click)="securityitemSelected(securityitem)">
+      {{securityitem}}
+    </button>
+    <br><p></p>
+    <button color="danger" text-align="center" ion-item (click)="logout()">
+      로그아웃
+    </button>
   </ion-list>
 </div>
 </ion-content>
